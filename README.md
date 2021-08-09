@@ -21,17 +21,27 @@ cd cdr-apps
 
 ## Change Configuration
 
-Replace line 3 in either `after_selected_fields.py` or `after_all_fields.py` with your own CarrierX API access token:
+Copy the `configuration.py.template` file to `configuration.py` and replace the following variables:
 
-```python
-headers = {'Authorization': 'Bearer 12345678-abcd-1234-abcd-1234567890ab'}
-```
+1. Enter your credentials used to make requests to CarrierX API. To create a token, see the [Security Token](https://www.carrierx.com/documentation/quick-start/token) quick start guide.
 
-Update the date that will be used to poll the calls (line 6):
+    ```python
+    CARRIERX_API_TOKEN = ''
+    ```
 
-```python
-date = '2020-03-15'
-```
+2. If you use some specific base API URL, change it here
+
+    ```python
+    BASE_CARRIERX_API_URL = 'https://api.carrierx.com'
+    ```
+
+3. Set the date that will be used to poll the calls
+
+    ```python
+    DATE = ''
+    ```
+
+The date is set in the `YYYY-MM-DD` format, e.g., `DATE = '2020-03-15'`.
 
 ## Run Application
 

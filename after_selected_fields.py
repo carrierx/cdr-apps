@@ -1,9 +1,9 @@
-import requests, csv
+import requests, csv, configuration
 
-headers = {'Authorization': 'Bearer 12345678-abcd-1234-abcd-1234567890ab'}
-url = 'https://api.carrierx.com/core/v2/calls/call_drs'
+headers = {'Authorization': f'Bearer {configuration.CARRIERX_API_TOKEN}'}
+url = f'{configuration.BASE_CARRIERX_API_URL}/core/v2/calls/call_drs'
 
-date = '2020-03-15'
+date = configuration.DATE
 i = 1
 params = {
 'limit': '1',
